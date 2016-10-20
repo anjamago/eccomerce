@@ -1,0 +1,74 @@
+document.addEventListener('DOMContentLoaded',function(event){
+  (function(window,document){
+    var inicio = function(){
+      var element = null,
+          marco=null,
+          rutas={},
+          controladores ={},
+          controlador,
+          libreria={
+            getId:function(id){
+              element = document.querySelector(id);
+              return this;
+            },
+            noSubmit:function(){
+              element.addEventListener('submit',function(e){
+                e.preventDefault();
+                return this;
+
+              },false);
+              return this;
+            },
+            enrutar:function(){
+              marco = element;
+              return this;
+            },
+            ruta:function(ruta, plantilla,controlador){
+              rutas[ruta]={
+                'plantilla':plantilla,
+                'controlador':controlador
+              };
+
+              return this;
+            },
+            manejadorRutas:function(){
+              var hash = window.location.hash.substring(1) || '#/';
+
+              var destino = rutas[hash];
+              var xhr = new XMLHttpRequest();
+
+              if(destino && destino.plantilla){
+                xhr.addEventListener('load',function(){
+                    if(hash ==='/'){
+                      html_element = '<div class="ui text container"><h1 class="ui inverted header">'
+                          +'Imagine-a-Company</h1><h2>Do whatever you want when you want to.</h2>'
+                          +'<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div></div>'
+
+
+                      document.querySelector('#child').innerHTML = html_element;
+                    }else{
+                      removeClass('#home','segment');
+                    }
+                      marco.innerHTML = this.responseText;
+                },false);
+                xhr.open('get',destino.plantilla,true);
+                xhr.send(null);
+              }else{
+                window.location.hash='#/';
+              }
+
+            }
+
+          };
+          return libreria;
+    }
+
+    if(typeof window.libreria == 'undefined'){
+      window.libreria = window._ = inicio();
+      window.addEventListener('load',libreria.manejadorRutas,false);
+      window.addEventListener('hashchange',libreria.manejadorRutas,false);
+    }else{
+      console.log('se esta llamdo la libreia ');
+    }
+  })(window,document);
+});
