@@ -1,3 +1,4 @@
+var id_cart;
 document.addEventListener('DOMContentLoaded',function(event){
   (function(window,document){
     var inicio = function(){
@@ -42,8 +43,8 @@ document.addEventListener('DOMContentLoaded',function(event){
                 xhr.addEventListener('load',function(){
                     if(hash ==='/'){
                       html_element = '<div class="ui text container"><h1 class="ui inverted header">'
-                          +'Imagine-a-Company</h1><h2>Do whatever you want when you want to.</h2>'
-                          +'<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div></div>'
+                          +'Imagine-a-Company</h1><h2>Eccomerce Bootcamps</h2>'
+                          +'<div class="ui huge primary button">Log in<i class="right arrow icon"></i></div></div>'
 
 
                       document.querySelector('#child').innerHTML = html_element;
@@ -52,8 +53,13 @@ document.addEventListener('DOMContentLoaded',function(event){
                     }
                       marco.innerHTML = this.responseText;
                       console.log(vistaId);
-                      console.log(document.querySelector('#'+vistaId));
+                      if(vistaId === ''){
+                        id_cart = document.querySelector('#'+vistaId);
+                      }else{
+                        id_cart = document.querySelector('#'+vistaId);
+                      }
                       fr.inisilizeFire().dbConect('productos').getProduct();
+
 
                 },false);
                 xhr.open('get',destino.plantilla,true);
@@ -66,7 +72,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
           };
           return libreria;
-    }
+    };
 
     if(typeof window.libreria == 'undefined'){
       window.libreria = window._ = inicio();

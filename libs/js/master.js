@@ -66,7 +66,17 @@ var removeClass =function(id,class_css){
 
 };
 
-var crearCard=function(data){
+var crearCard=function(id, vista,data){
+var data_success={};
+var res;
+  if(data !=='')
+  {
+      if(res.categoria == vista){
+        data_success[data_key]= data[data_key];
+      }
+    }else {
+    data_success = data;
+  }
 	var element=document.querySelector('#mis_card');
 	var element_obj={};
 	var span = document.createElement("span");
@@ -83,11 +93,13 @@ var crearCard=function(data){
 
 	element_obj[1].classList.add('card');
 	element_obj[2].classList.add('image');
-	img.setAttribute('href',data.img);
+	img.setAttribute('href',data_success.img);
 	element_obj[2].appenChilder(img);
 	element_obj[3].classList.add('content');
   element_obj[4].classList.add('description');
   div_content.classList.add('header');
+//insertar contenido nombre de producto
+  div_content.innerHTML = data_success.
   element_obj[3].appenChilder(div_content);
   element_obj[3].appenChilder(element_obj[4]);
 
