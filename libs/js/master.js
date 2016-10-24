@@ -41,7 +41,7 @@ var fireBase = function(){
                 obj_product[key]=childData;
 
             });
-            console.log(obj_product);
+            
         });
      }
    };
@@ -49,8 +49,6 @@ var fireBase = function(){
 
 
 var fr = fireBase();
-
-fr.inisilizeFire().dbConect('productos').getProduct();
 
 var removeClass =function(id,class_css){
       var element = document.querySelector(id);
@@ -113,3 +111,30 @@ element_obj[1].appenChilder(element_obj[5]);
 element.appenChilder(element_obj[1]);
 
 };
+//crear clave unica
+var uniqid= function(){
+  var n=Math.floor(Math.random()*11);
+  var k = Math.floor(Math.random()* 1000000);
+  var m = String.fromCharCode(n)+k;
+  return m;
+}
+//carrito de compras
+
+var my_carrito={};
+var shop_carrier=function() {
+    var product={
+      'name':'',
+      'quantyti':'',
+      'price':'',
+      'img':''
+    };
+
+    var id= uniqid();
+    var i =0;
+    while(my_carrito.length > 0){
+      if(my_carrito[i] === id){
+        id = uniqid();
+      }
+    }
+    my_carrito[id]=product;
+}

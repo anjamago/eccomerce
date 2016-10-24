@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded',function(event){
             },
             manejadorRutas:function(){
               var hash = window.location.hash.substring(1) || '#/';
-
+              var vistaId = hash.split('/');
+              vistaId = vistaId[vistaId.length -1];
               var destino = rutas[hash];
               var xhr = new XMLHttpRequest();
 
@@ -50,6 +51,10 @@ document.addEventListener('DOMContentLoaded',function(event){
                       removeClass('#home','segment');
                     }
                       marco.innerHTML = this.responseText;
+                      console.log(vistaId);
+                      console.log(document.querySelector('#'+vistaId));
+                      fr.inisilizeFire().dbConect('productos').getProduct();
+
                 },false);
                 xhr.open('get',destino.plantilla,true);
                 xhr.send(null);
