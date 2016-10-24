@@ -41,7 +41,7 @@ var fireBase = function(){
                 obj_product[key]=childData;
 
             });
-            
+
         });
      }
    };
@@ -49,7 +49,7 @@ var fireBase = function(){
 
 
 var fr = fireBase();
-
+console.log(obj_product);
 var removeClass =function(id,class_css){
       var element = document.querySelector(id);
       var child = document.querySelector('#child');
