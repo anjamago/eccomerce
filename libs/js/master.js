@@ -67,9 +67,12 @@ var removeClass =function(id,class_css){
       menu.style.display= 'flex !important';
 
 };
-
-var crearCard=function(id, vista,data){
+var crearCard=function(data){
+id_cart = document.querySelector('#'+vistaId);
 var data_success={};
+var hash = window.location.hash.substring(1);
+var vista = hash.split('/');
+vista = vistaId[vista.length -1];
 console.log(vista);
 console.log(data);
   if(data !=='')
