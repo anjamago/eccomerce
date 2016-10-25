@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
                       fr.inisilizeFire().dbConect('productos').getProduct();
                       console.log(obj_product);
-                      obj_product.forEach(key,obj,function(){
+                      obj_product.forEach(function(key,obj){
                         console.log(key);
                         console.log(obj);
                         //crearCard(id_cart,vistaId,data);
