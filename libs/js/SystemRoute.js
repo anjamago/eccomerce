@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
                         console.log(obj_product[a]);
 
-                        //crearCard(id_cart,vistaId,data);
+                        crearCard(id_cart,vistaId,data);
                       }
 
                 },false);
