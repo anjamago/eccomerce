@@ -59,18 +59,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                         id_cart = document.querySelector('#'+vistaId);
                         vistaId = '';
                       }
-
+                      console.log(id_cart, vistaId);
                       fr.inisilizeFire().dbConect('productos');
-                      var res = fr.getProduct();
-                      console.log(res);
-                      for(var a in res){
-
-                        console.log(obj_product[a]);
-
-                        crearCard(id_cart,vistaId,data);
-                      }
-                      console.log(res);
-                      
+                      fr.getProduct(id_cart,vistaId);
 
                 },false);
                 xhr.open('get',destino.plantilla,true);
