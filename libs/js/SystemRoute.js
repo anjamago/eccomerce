@@ -1,6 +1,6 @@
 var id_cart;
 document.addEventListener('DOMContentLoaded',function(event){
-  (function(window,document){
+  /*(function(window,document){*/
     var inicio = function(){
       var element = null,
           marco=null,
@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                         vistaId = '';
                       }
 
-                      fr.inisilizeFire().dbConect('productos').getProduct();
+                      fr.inisilizeFire().dbConect('productos');
+                      fr.getProduct();
+
                       console.log(obj_product);
                       var inde =0;
                       for(var a in obj_product){
@@ -89,6 +91,7 @@ document.addEventListener('DOMContentLoaded',function(event){
       window.addEventListener('hashchange',libreria.manejadorRutas,false);
     }else{
       console.log('se esta llamdo la libreia ');
-    }
+    }/*
   })(window,document);
+});*/
 });

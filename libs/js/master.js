@@ -1,4 +1,5 @@
 var obj_product={};
+document.addEventListener('DOMContentLoaded',function(event){
 var fireBase = function(){
   return {
      apiKey: "AIzaSyCFH8Fl7WPSlDxf5C7T-KJT7RJMBpStagg",
@@ -23,7 +24,7 @@ var fireBase = function(){
      dbConect:function(data){
           this.fire_base = new Firebase("https://inventario-d1349.firebaseio.com");
           this.result = this.fire_base.child(data);
-          return this;
+          //return this;
      }
      ,
      getAutLogin:function(){
@@ -154,4 +155,5 @@ var shop_carrier=function() {
       }
     }
     my_carrito[id]=product;
-}
+};
+});
