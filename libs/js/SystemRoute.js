@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded',function(event){
 
                       fr.inisilizeFire().dbConect('productos').getProduct();
                       console.log(obj_product);
-                      for(var product in obj_product){
-                        console.log(product);
-                        crearCard(id_cart,vistaId,data);
+                      obj_product.forEach(key,obj){
+                        console.log(key);
+                        console.log(obj);
+                        //crearCard(id_cart,vistaId,data);
                       }
 
                 },false);
