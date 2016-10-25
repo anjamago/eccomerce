@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded',function(event){
             },
             manejadorRutas:function(){
               var hash = window.location.hash.substring(1) || '#/';
-              var vistaId = hash.split('/');
-              vistaId = vistaId[vistaId.length -1];
+
+
               var destino = rutas[hash];
               var xhr = new XMLHttpRequest();
 
@@ -52,16 +52,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                       removeClass('#home','segment');
                     }
                       marco.innerHTML = this.responseText;
-                      console.log(vistaId);
-                      if(vistaId === ''){
-                        id_cart = document.querySelector('#'+vistaId);
-                      }else{
-                        id_cart = document.querySelector('#'+vistaId);
-                        vistaId = '';
-                      }
-                      console.log(id_cart, vistaId);
+
                       fr.inisilizeFire().dbConect('productos');
-                      fr.getProduct(id_cart,vistaId);
+                      fr.getProduct();
 
                 },false);
                 xhr.open('get',destino.plantilla,true);

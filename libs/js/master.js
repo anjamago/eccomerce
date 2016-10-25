@@ -29,7 +29,7 @@ var fireBase = function(){
      getAutLogin:function(){
 
      },
-     getProduct:function(id_cart,vistaId){
+     getProduct:function(){
 
        this.fire_base.on("child_added", function(snap) {
 
@@ -40,7 +40,7 @@ var fireBase = function(){
                 var childData = childSnapshot.val();
                 obj_product[key]=childData;
                 //console.log(id_cart, vistaId);
-                crearCard(id_cart,vistaId,childData);
+                crearCard(childData);
 
             });
 
@@ -67,6 +67,7 @@ var removeClass =function(id,class_css){
       menu.style.display= 'flex !important';
 
 };
+//crearCard
 var crearCard=function(data){
 id_cart = document.querySelector('#'+vistaId);
 var data_success={};
