@@ -89,3 +89,14 @@ document.addEventListener('DOMContentLoaded',function(event){
   })(window,document);
 });*/
 });
+
+document.addEventListener('DOMContentLoaded',function(event){
+
+  if(typeof window.libreria == 'undefined'){
+    window.libreria = window._ = inicio();
+    window.addEventListener('load',libreria.manejadorRutas,false);
+    window.addEventListener('hashchange',libreria.manejadorRutas,false);
+  }else{
+    console.log('se esta llamdo la libreia ');
+  }
+});
