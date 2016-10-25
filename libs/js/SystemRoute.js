@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',function(event){
                         crearCard(id_cart,vistaId,data);
                       }
                       console.log(res);
-                      debugger;
+                      
 
                 },false);
                 xhr.open('get',destino.plantilla,true);
@@ -85,18 +85,13 @@ document.addEventListener('DOMContentLoaded',function(event){
           return libreria;
     };
 
-  /*
+    if(typeof window.libreria == 'undefined'){
+      window.libreria = window._ = inicio();
+      window.addEventListener('load',libreria.manejadorRutas,false);
+      window.addEventListener('hashchange',libreria.manejadorRutas,false);
+    }else{
+      console.log('se esta llamdo la libreia ');
+    }/*
   })(window,document);
 });*/
-});
-
-document.addEventListener('DOMContentLoaded',function(event){
-
-  if(typeof window.libreria == 'undefined'){
-    window.libreria = window._ = inicio();
-    window.addEventListener('load',libreria.manejadorRutas,false);
-    window.addEventListener('hashchange',libreria.manejadorRutas,false);
-  }else{
-    console.log('se esta llamdo la libreia ');
-  }
 });
