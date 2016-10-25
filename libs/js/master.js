@@ -74,7 +74,7 @@ console.log(vista);
 console.log(data);
   if(data !=='')
   {
-      if(res.categoria == vista){
+      if(data.categoria == vista){
         data_success[data_key]= data[data_key];
       }
     }else {
