@@ -77,7 +77,7 @@ var res;
     }else {
     data_success = data;
   }
-	var element=document.querySelector('#mis_card');
+	var element=document.querySelector('#'+vista);
 	var element_obj={};
 	var span = document.createElement("span");
 	var span1 = document.createElement("span");
@@ -93,24 +93,28 @@ var res;
 
 	element_obj[1].classList.add('card');
 	element_obj[2].classList.add('image');
-	img.setAttribute('href',data_success.img);
+	img.setAttribute('href',data_success.imagenbase64);
 	element_obj[2].appenChilder(img);
 	element_obj[3].classList.add('content');
   element_obj[4].classList.add('description');
   div_content.classList.add('header');
 //insertar contenido nombre de producto
-  div_content.innerHTML = data_success.
+  div_content.innerHTML = data_success.nombre_producto;
   element_obj[3].appenChilder(div_content);
+  element_obj[4].innerHTML = "<span>"+data_success.cantidad+"</span><br>"+data_success.descripcion;
+
   element_obj[3].appenChilder(element_obj[4]);
 
 	element_obj[5].classList.add('extra');
 	element_obj[5].classList.add('content');
   span.classList.add('right');
   span.classList.add('floated');
-  var i = document.createElement('i');
+  var i = document.createElement("i");
   i.classList.add('user');
   i.classList.add('icon');
   span1.appenChilder(i);
+  span1.innerHTML = data_success.cantidad;
+  span.innerHTML = '<button id="carrito">Agregar</button>';
   element_obj[5].appenChilder(span);
   element_obj[5].appenChilder(span1);
 

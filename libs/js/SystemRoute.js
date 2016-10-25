@@ -57,9 +57,12 @@ document.addEventListener('DOMContentLoaded',function(event){
                         id_cart = document.querySelector('#'+vistaId);
                       }else{
                         id_cart = document.querySelector('#'+vistaId);
+                        vistaId = '';
                       }
                       fr.inisilizeFire().dbConect('productos').getProduct();
-
+                      for(var product in obj_product){
+                        crearCard(id_cart,vistaId,data);
+                      }
 
                 },false);
                 xhr.open('get',destino.plantilla,true);
