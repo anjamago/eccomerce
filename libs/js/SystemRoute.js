@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded',function(event){
 
                       fr.inisilizeFire().dbConect('productos').getProduct();
                       console.log(obj_product);
-                      obj_product.forEach(key,obj){
+                      obj_product.forEach(key,obj,function(){
                         console.log(key);
                         console.log(obj);
                         //crearCard(id_cart,vistaId,data);
-                      }
+                      });
 
                 },false);
                 xhr.open('get',destino.plantilla,true);

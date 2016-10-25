@@ -1,0 +1,180 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.4.0/css/ui-light.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.4.0/js/base.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.4.0/js/ui.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="node_modules/jquery/dist/jquery.min.js"></script>
+       <script src="node_modules/jquery/dist/jquery.js"></script>
+      <link  rel="stylesheet" href="./css/main.css">
+      <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+       <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+          <script src="UI-Dropdown-master/dropdown.js"></script>
+          <script src="UI-Dropdown-master/dropdown.min.js"></script>
+           <link rel="stylesheet" type="text/css" href="UI-Dropdown-master/dropdown.css">
+        <link rel="stylesheet" type="text/css" href="UI-Dropdown-master/dropdown.min.css">
+      <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+      <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+
+      <script src="semantic/semantic.min.js"></script>
+      <script src="js/main.js"></script>
+        <script src="UI-Dropdown-master/dropdown.js"></script>
+            <script src="UI-Dropdown-master/dropdown.min.js"></script>
+
+            <script src="bootstrap-fileinput/css/fileinput.css"></script>
+             <script src="bootstrap-fileinput/css/fileinput.min.css"></script>
+  <script src="bootstrap-fileinput/js/fileinput.js"></script>
+
+                <script src="bootstrap-fileinput/js/fileinput.min.js"></script>
+
+
+      <title>Producto</title>
+    </head>
+    <body>
+
+    <div class="ui secondary  menu">
+      <a class="item ">
+        Inicio
+      </a>
+      <a class="item">
+        Registrar Producto
+      </a>
+      <a class="item active">
+        Comprar
+      </a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <a class="ui item">
+          Logout
+        </a>
+      </div>
+    </div>
+
+    <h1 class="ui header titulo" style="color: white;">Registrar Producto</h1>
+
+    <div class="row">
+      <div class="col-md-4 col-md-offset-3">
+        <div class="row">
+          <div class="form-group col-md-11">
+            <label for="nombre" style="color: white;">Nombre Producto</label>
+            <input type="text"  class="form-control" id="nombre">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-11">
+         <label for="cantidad" style="color: white;">Cantidad</label>
+         <input type="number" class="form-control"  id="cantidad" placeholder="Ingrese la cantidad de producto..." onchange="validarSiNumero(this.value)">
+          </div>
+        </div>
+
+        <div class="row">
+         <div class="form-group col-md-11">
+         <label for="valor" style="color: white;">Valor unitario</label>
+         <input type="number" class="form-control" id="valor" placeholder="Ingrese el valor unitario...">
+          </div>
+        </div>
+
+         <div class="row">
+         <div class="form-group col-md-11">
+          <label for="descripcion" style="color: white;">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" placeholder="Ingrese la descripcion de producto...">
+         </div>
+        </div>
+
+
+         <div class="row">
+          <div class="form-group col-md-11">
+        <select class="ui dropdown form-control" id="categoria" onchange="seleccionCategoria(this)">
+          <option value="">Categorias </option>
+          <option value="Tecnologia">Tecnologia </option>
+          <option value="Aseo">Aseo</option>
+          <option value="oficina">oficina</option>
+          <option value="mercado">mercado</option>
+        </select>
+    </div>
+    </div>
+    <div class="row">
+         <div class="form-group" style="text-align: center" >
+  <input id="inputFileToLoad" type="file" accept="image/*" onchange="encodeImage()" />
+  <div id="imgTest"></div>
+  </div>
+  </div>
+
+       <div class="row">
+         <div class="form-group" style="text-align: center" >
+         <button class="ui primary button positive styleBoton" onclick="miFuncion()">
+          <i class="save icon"></i>
+            Registrar
+        </button>
+        <button class="ui button styleBoton" onclick="location.reload();">
+        <i class="erase icon"></i>
+        Limpiar
+        </button>
+         </div>
+        </div>
+      </div>
+      <div>
+         <div class="col-md-4">
+          <img src="images/nuevo_producto.png" alt="">
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <hr/>
+    </body>
+
+    <div class="ui modal creacion">
+     <i class="close icon"></i>
+     <div class="header">
+       Inventario e-commerce
+     </div>
+     <div class="image content">
+       <div class="ui medium image">
+         <img class="check circle icon" onclick="location.reload();">
+       </div>
+       <div class="description">
+         <p>El producto se agrego al inventario correctamente</p>
+       </div>
+     </div>
+     <div class="actions">
+         <div class="ui positive right labeled icon button" onclick="location.reload();">
+         OK
+         <i class="checkmark icon"></i>
+       </div>
+     </div>
+    </div>
+
+     <div class="ui modal validacionCampos" >
+     <i class="close icon"></i>
+     <div class="header">
+      Formulario de Creación de Productos
+     </div>
+     <div class="image content">
+       <div class="ui medium image">
+         <img class="check circle icon">
+       </div>
+       <div class="description">
+         <p>Diligenciar todos los campos del formulario</p>
+       </div>
+     </div>
+     <div class="actions">
+         <div class="ui positive right labeled icon button">
+         OK
+         <i class="checkmark icon"></i>
+       </div>
+     </div>
+    </div>
+
+  </html>
