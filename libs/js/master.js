@@ -29,7 +29,7 @@ var fireBase = function(){
      getAutLogin:function(){
 
      },
-     getProduct:function(){
+     getProduct:function(id_cart,vistaId){
 
        this.fire_base.on("child_added", function(snap) {
 
@@ -39,9 +39,10 @@ var fireBase = function(){
                 var key = childSnapshot.key();
                 var childData = childSnapshot.val();
                 obj_product[key]=childData;
-                console.log(obj_product);
+                console.log(id_cart, vistaId);
+                //crearCard(id_cart,vistaId,obj_product);
+
             });
-            return obj_product;
 
         });
      }
