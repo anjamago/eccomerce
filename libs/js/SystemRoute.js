@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                         id_cart = document.querySelector('#'+vistaId);
                         vistaId = '';
                       }
+
                       fr.inisilizeFire().dbConect('productos').getProduct();
+                      console.log(obj_product);
                       for(var product in obj_product){
                         console.log(product);
                         crearCard(id_cart,vistaId,data);
