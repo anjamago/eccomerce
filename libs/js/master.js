@@ -68,7 +68,8 @@ var removeClass =function(id,class_css){
 
 var crearCard=function(id, vista,data){
 var data_success={};
-var res;
+console.log(vista);
+console.log(data);
   if(data !=='')
   {
       if(res.categoria == vista){
