@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                       console.log(obj_product);
                       for(var obj in obj_product){
                         console.log(obj);
-                        
+
                         //crearCard(id_cart,vistaId,data);
-                      });
+                      }
 
                 },false);
                 xhr.open('get',destino.plantilla,true);
