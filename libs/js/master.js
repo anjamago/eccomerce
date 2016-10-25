@@ -73,7 +73,7 @@ var crearCard=function(data){
 var data_success={};
 var hash = window.location.hash.substring(1);
 var vista = hash.split('/');
-vista = vistaId[vista.length -1];
+vista = vista[vista.length -1];
 id_cart = document.querySelector('#'+vista);
 console.log(vista);
 console.log(data);
