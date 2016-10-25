@@ -39,8 +39,8 @@ var fireBase = function(){
                 var key = childSnapshot.key();
                 var childData = childSnapshot.val();
                 obj_product[key]=childData;
-                console.log(id_cart, vistaId);
-                //crearCard(id_cart,vistaId,obj_product);
+                //console.log(id_cart, vistaId);
+                crearCard(id_cart,vistaId,childData);
 
             });
 
