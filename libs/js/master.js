@@ -1,5 +1,5 @@
 var obj_product={};
-document.addEventListener('DOMContentLoaded',function(event){
+//document.addEventListener('DOMContentLoaded',function(event){
 var fireBase = function(){
   return {
      apiKey: "AIzaSyCFH8Fl7WPSlDxf5C7T-KJT7RJMBpStagg",
@@ -135,7 +135,7 @@ var uniqid= function(){
   var k = Math.floor(Math.random()* 1000000);
   var m = String.fromCharCode(n)+k;
   return m;
-}
+};
 //carrito de compras
 
 var my_carrito={};
@@ -156,4 +156,4 @@ var shop_carrier=function() {
     }
     my_carrito[id]=product;
 };
-});
+//});
