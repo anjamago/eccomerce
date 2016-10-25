@@ -39,7 +39,7 @@ var fireBase = function(){
                 var key = childSnapshot.key();
                 var childData = childSnapshot.val();
                 obj_product[key]=childData;
-
+                console.log(obj_product);
             });
             return obj_product;
 
