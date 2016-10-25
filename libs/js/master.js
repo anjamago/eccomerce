@@ -69,11 +69,12 @@ var removeClass =function(id,class_css){
 };
 //crearCard
 var crearCard=function(data){
-id_cart = document.querySelector('#'+vistaId);
+
 var data_success={};
 var hash = window.location.hash.substring(1);
 var vista = hash.split('/');
 vista = vistaId[vista.length -1];
+id_cart = document.querySelector('#'+vista);
 console.log(vista);
 console.log(data);
   if(data !=='')
