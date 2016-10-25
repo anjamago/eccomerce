@@ -61,11 +61,9 @@ document.addEventListener('DOMContentLoaded',function(event){
                       }
 
                       fr.inisilizeFire().dbConect('productos');
-                      fr.getProduct();
-
-                      console.log(obj_product);
-                      var inde =0;
-                      for(var a in obj_product){
+                      var res = fr.getProduct();
+                      console.log(res);
+                      for(var a in res){
 
                         console.log(obj_product[a]);
 

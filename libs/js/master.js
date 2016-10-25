@@ -25,8 +25,7 @@ var fireBase = function(){
           this.fire_base = new Firebase("https://inventario-d1349.firebaseio.com");
           this.result = this.fire_base.child(data);
           //return this;
-     }
-     ,
+     },
      getAutLogin:function(){
 
      },
@@ -42,6 +41,7 @@ var fireBase = function(){
                 obj_product[key]=childData;
 
             });
+            return obj_product;
 
         });
      }
